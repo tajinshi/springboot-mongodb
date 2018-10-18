@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author calvin
  */
-public class BeanMapper {
+public class DozerBeanUtil {
 
     /**
      * 持有Dozer单例, 避免重复创建DozerMapper消耗资源.
