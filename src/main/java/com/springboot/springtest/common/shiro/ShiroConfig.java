@@ -52,7 +52,6 @@ public class ShiroConfig {
         Map<String, String> filterRuleMap = new HashMap<>();
         // 拦截/api/**请求到JWTFilter 的拦截器
         filterRuleMap.put("/api/**", "jwt");
-//        filterRuleMap.put("/api/**", "anon");
         //swagger请求不拦截
         filterRuleMap.put("/swagger-resources/**", "anon");
         filterRuleMap.put("/webjars/**", "anon");
