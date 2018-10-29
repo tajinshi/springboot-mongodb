@@ -15,4 +15,31 @@ spring:
       password:
   application:
     name: springboot-tjs
+  profiles:
+    active: dev
 
+
+datasource:
+    url: ${mysql.url}
+    username: ${mysql.username}
+    password: ${mysql.password}
+    driver-class-name: com.mysql.jdbc.Driver
+    initial-size: 5
+    max-active: 20
+    max-idle: 10
+    max-wait: 60000
+    connection-timeout: 600000
+    min-idle: 1
+    validation-query: select 1 from dual
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    filters : stat
+    test-on-borrow: true
+    test-while-idle: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.springboot.springtest.bean
+
+  aop:
+      proxy-target-class: true

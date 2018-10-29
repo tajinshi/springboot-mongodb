@@ -1,7 +1,6 @@
 package com.springboot.springtest.common;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -10,7 +9,6 @@ import java.io.Serializable;
  * Created by wcj on 16/12/7.
  */
 @Data
-@NoArgsConstructor
 public class ApiResponse implements Serializable {
     //状态
     private String status;
