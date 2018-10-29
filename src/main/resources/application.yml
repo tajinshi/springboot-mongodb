@@ -1,7 +1,9 @@
+#tomcat
 server:
    port: 8888
 tomcat:
    uri-encoding: UTF-8
+
 
    #mongodb  spring.data.mongodb.uri=mongodb://localhost:27017/springboot-db  没有密码
    #spring.data.mongodb.uri=mongodb://name:pass@localhost:27017/dbname  设置了密码
@@ -11,4 +13,6 @@ spring:
       uri: mongodb://localhost:27001/mongodb
       username:
       password:
+  application:
+    name: springboot-tjs
 
