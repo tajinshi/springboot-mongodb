@@ -21,6 +21,7 @@ public class CollStageServiceImpl implements CollStageService {
     private CollStageMapper stageMapper;
     @Override
     public CollStage getStageById(String id) {
-        return stageMapper.getStageById(id);
+        CollStage collStage = stageMapper.selectById(id);
+        return collStage;
     }
 }

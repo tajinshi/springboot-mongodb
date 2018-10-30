@@ -19,7 +19,7 @@ spring:
     active: dev
 
 
-datasource:
+  datasource:
     url: ${mysql.url}
     username: ${mysql.username}
     password: ${mysql.password}
