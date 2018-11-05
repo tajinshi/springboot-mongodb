@@ -8,16 +8,21 @@ tomcat:
    #mongodb  spring.data.mongodb.uri=mongodb://localhost:27017/springboot-db  没有密码
    #spring.data.mongodb.uri=mongodb://name:pass@localhost:27017/dbname  设置了密码
 spring:
+  application:
+    name: springboot-tjs
+  profiles:
+    active: dev
   data:
     mongodb:
       uri: mongodb://localhost:27001/mongodb
       username:
       password:
-  application:
-    name: springboot-tjs
-  profiles:
-    active: dev
 
+#   redis:
+#      host: ${redis.host}
+#      port: ${redis.port}
+#      timeout: 3000
+#      password: ${redis.password}
 
   datasource:
     url: ${mysql.url}
