@@ -4,6 +4,8 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -15,6 +17,7 @@ import java.io.Serializable;
  * @since 2018-10-29
  */
 @TableName("coll_stage")
+@Data
 public class CollStage extends Model<CollStage> {
 
     private static final long serialVersionUID = 1L;
@@ -65,87 +68,6 @@ public class CollStage extends Model<CollStage> {
      */
     @TableField("keep_days")
     private Integer keepDays;
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getStageName() {
-        return stageName;
-    }
-
-    public void setStageName(String stageName) {
-        this.stageName = stageName;
-    }
-
-    public Integer getMinDays() {
-        return minDays;
-    }
-
-    public void setMinDays(Integer minDays) {
-        this.minDays = minDays;
-    }
-
-    public Integer getMaxDays() {
-        return maxDays;
-    }
-
-    public void setMaxDays(Integer maxDays) {
-        this.maxDays = maxDays;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public String getCreateUser() {
-        return createUser;
-    }
-
-    public void setCreateUser(String createUser) {
-        this.createUser = createUser;
-    }
-
-    public String getUpdateUser() {
-        return updateUser;
-    }
-
-    public void setUpdateUser(String updateUser) {
-        this.updateUser = updateUser;
-    }
-
-    public Date getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public Integer getIsVisit() {
-        return isVisit;
-    }
-
-    public void setIsVisit(Integer isVisit) {
-        this.isVisit = isVisit;
-    }
-
-    public Integer getKeepDays() {
-        return keepDays;
-    }
-
-    public void setKeepDays(Integer keepDays) {
-        this.keepDays = keepDays;
-    }
 
     @Override
     protected Serializable pkVal() {

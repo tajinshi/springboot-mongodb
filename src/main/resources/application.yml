@@ -17,6 +17,14 @@ spring:
       uri: mongodb://localhost:27001/mongodb
       username:
       password:
+  #http
+  http:
+   encoding:
+     charset: UTF-8 #HTTP请求和响应的字符集
+     enabled: true #是否启用HTTP编码支持
+     force: true #是否强制在HTTP请求和响应上对已配置的字符集进行编码
+  messages:
+    encoding: UTF-8
 
 #   redis:
 #      host: ${redis.host}
@@ -48,3 +56,8 @@ mybatis:
 
   aop:
       proxy-target-class: true
+
+#log日志 logback file与path配置一个即可，都配置以file为主
+logging:
+  file: ${user.dir}/logs/springboot-log.log
+  level: debug
