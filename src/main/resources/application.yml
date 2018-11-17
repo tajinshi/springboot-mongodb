@@ -17,6 +17,17 @@ spring:
       uri: mongodb://localhost:27001/mongodb
       username:
       password:
+  #dubbo
+  dubbo:
+      application:
+        name: springboot
+      server: true
+      registry:
+        address: ${zookeeper.address}
+      protocol:
+        name: dubbo
+        port: 12345
+      scan: com.springboot.springtest.dubbo.dubboImpl
   #http
   http:
    encoding:
@@ -60,4 +71,4 @@ mybatis:
 #log日志 logback file与path配置一个即可，都配置以file为主
 logging:
   file: ${user.dir}/logs/springboot-log.log
-  level: debug
+#  level: debug
