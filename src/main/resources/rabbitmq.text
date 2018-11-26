@@ -1,0 +1,5 @@
+1.https://blog.csdn.net/weixin_39735923/article/details/79288578 rabbitmq安装windows
+2.       //发送到hello队列
+          rabbitTemplate.convertAndSend("hello", context);
+          //发送到topic.message
+          this.rabbitTemplate.convertAndSend("exchange", "topic.message", context);

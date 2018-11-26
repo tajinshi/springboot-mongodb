@@ -17,7 +17,11 @@ public class HelloSender{
     public void send() {
         String context = "hello " + new Date();
         System.out.println("Sender : " + context);
+        //发送到hello队列
         rabbitTemplate.convertAndSend("hello", context);
+        //发送到topic.message
+        this.rabbitTemplate.convertAndSend("exchange", "topic.message", context);
     }
+
 
 }

@@ -120,12 +120,11 @@
             <version>4.1.0</version>
         </dependency>
 
-		<!--logback-->
+
+        <!--Spring Boot默认使用LogBack日志系统-->
 		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
-			<scope>test</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
 
 
