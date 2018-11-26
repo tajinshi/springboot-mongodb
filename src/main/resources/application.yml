@@ -60,6 +60,12 @@ spring:
     filters : stat
     test-on-borrow: true
     test-while-idle: true
+  #rabbitmq消息队列
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
