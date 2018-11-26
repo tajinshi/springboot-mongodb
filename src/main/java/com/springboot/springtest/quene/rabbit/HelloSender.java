@@ -2,11 +2,14 @@ package com.springboot.springtest.quene.rabbit;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
-@Service
-public class HelloSender implements HelloSenderService{
+
+/**
+ * 1.需要使用rabbitmq发送消息的地方注入：AmqpTemplate
+ * 2.调用converAndSend 发送消息
+ */
+public class HelloSender{
 
     @Autowired
     private AmqpTemplate rabbitTemplate;
