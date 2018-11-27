@@ -76,4 +76,4 @@ mybatis:
 
 #log日志 logback file与path配置一个即可，都配置以file为主
 logging:
-  file: ${user.dir}/logs/springboot-log.log
+  path: ${user.dir}/logs/
