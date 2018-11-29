@@ -3,3 +3,6 @@
           rabbitTemplate.convertAndSend("hello", context);
           //发送到topic.message
           this.rabbitTemplate.convertAndSend("exchange", "topic.message", context);
+3.默认访问地址：http://localhost:15672/
+  对外服务端口默认：5672
+  用户名、密码默认：guest

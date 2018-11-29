@@ -67,6 +67,8 @@ spring:
     username: guest
     password: guest
 
+
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   typeAliasesPackage: com.springboot.springtest.bean

@@ -1,0 +1,13 @@
+1.下载地址：  http://activemq.apache.org/download.html  ————> ActiveMQ 5.15.8 Release
+2.解压后修改conf/activemq.xml中的
+     <transportConnectors>
+            <!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
+            <transportConnector name="openwire" uri="tcp://127.0.0.1:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="amqp" uri="amqp://127.0.0.1:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="stomp" uri="stomp://127.0.0.1:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="mqtt" uri="mqtt://127.0.0.1:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="ws" uri="ws://127.0.0.1:61614?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+        </transportConnectors>
+3.选择对用的32位、还是64位,双击activemq.bat启动
+4.默认访问地址： http://localhost:8161/admin/
+5.默认用户名，密码都是admin ，默认spring.activemq.broker-url=tcp://127.0.0.1:61616
