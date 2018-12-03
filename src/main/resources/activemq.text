@@ -10,4 +10,4 @@
         </transportConnectors>
 3.选择对用的32位、还是64位,双击activemq.bat启动
 4.默认访问地址： http://localhost:8161/admin/
-5.默认用户名，密码都是admin ，默认spring.activemq.broker-url=tcp://127.0.0.1:61616
+5.默认用户名，密码都是admin ，默认:spring.activemq.broker-url = tcp://127.0.0.1:61616
