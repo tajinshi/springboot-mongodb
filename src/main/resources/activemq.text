@@ -11,3 +11,26 @@
 3.选择对用的32位、还是64位,双击activemq.bat启动
 4.默认访问地址： http://localhost:8161/admin/
 5.默认用户名，密码都是admin ，默认:spring.activemq.broker-url = tcp://127.0.0.1:61616
+
+
+6.activemq整合zookeeper
+修改activemq.xml配置文件
+
+【1】将broker节点的brokerName设置为wzhamq
+<broker xmlns="http://activemq.apache.org/schema/core" brokerName="wzhamq" dataDirectory="${activemq.data}">
+
+【2】将persistenceAdapter的持久化方式选用replicatedLevelDB，将kahaDB方式注释掉
+
+<persistenceAdapter>
+    <!--
+     <kahaDB directory="${activemq.data}/kahadb"/>
+    -->
+   <replicatedLevelDB
+       directory="${activemq.data}/leveldb"
+       replicas="3"
+       bind="tcp://0.0.0.0:0"
+       zkAddress="192.168.3.10:2181,192.168.3.11:2181"
+       hostname="192.168.3.10"  <!--activemq所在的主机host-->
+       sync="local_disk"
+       zkPath="/activemq/message"/>  <!--zookeeper注册节点-->
+   </persistenceAdapter>
