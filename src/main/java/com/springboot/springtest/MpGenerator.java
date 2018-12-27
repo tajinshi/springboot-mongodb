@@ -59,7 +59,7 @@ public class MpGenerator {
         dsc.setUsername("root");
         dsc.setPassword("root");
         //jdbc:mysql://52.80.2.8:3306/consum_stage?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE
-        dsc.setUrl("jdbc:mysql://192.168.3.180:3306/as-coll?useUnicode=true&amp;characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://47.105.177.96:3306/tajinshi?useUnicode=true&amp;characterEncoding=utf8");
         mpg.setDataSource(dsc);
 
         // 策略配置

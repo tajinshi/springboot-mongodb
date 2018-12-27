@@ -38,14 +38,4 @@ public class ReflectUtil {
         }
         return target;
     }
-
-    public static void main(String[] args) {
-        Map<String,Object> map = new HashMap<>();
-        map.put("id",20000l);
-        map.put("name","ceshi");
-        map.put("age",23);
-        User user = new User();
-        User user1 = (User) MapToBean(map, user);
-        System.out.println(user1);
-    }
 }
