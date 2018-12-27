@@ -29,7 +29,7 @@ public class SpringBatchController {
         String date =df.format(System.currentTimeMillis());
         jobParameters = new JobParametersBuilder()
                 .addString("time",date)
-                .addString("input.file.name",path)
+                .addString("filePath",path)
                 .toJobParameters();
         jobLauncher.run(importJob, jobParameters);
         return "ok";

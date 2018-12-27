@@ -2,10 +2,12 @@ package com.springboot.springtest.springbatch;
 
 import com.springboot.springtest.bean.Person;
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.launch.support.SimpleJobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
@@ -22,6 +24,7 @@ import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.batch.item.validator.Validator;
 import org.springframework.batch.support.DatabaseType;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -35,7 +38,7 @@ public class SpringBatchConfig {
 
 
         /**
-         * ItemReader定义,用来读取数据
+         * ItemReader定义,用来读取数据 注入外部的文件地址 @Value("#{jobParameters[filePath]}") String inputFile
          * 1，使用FlatFileItemReader读取文件
          * 2，使用FlatFileItemReader的setResource方法设置csv文件的路径
          * 3，对此对cvs文件的数据和领域模型类做对应映射
@@ -43,9 +46,12 @@ public class SpringBatchConfig {
          * @throws Exception
          */
         @Bean
-        public ItemReader<Person> reader()throws Exception {
+        @StepScope
+        public ItemReader<Person> reader(@Value("#{jobParameters[filePath]}") String inputFile)throws Exception {
+            System.out.println("--------------------"+inputFile);
             FlatFileItemReader<Person> reader = new FlatFileItemReader<>();
-            reader.setResource(new ClassPathResource("person.csv"));
+//            reader.setResource(new ClassPathResource("person.csv")); //指定文件地址
+            reader.setResource(new ClassPathResource(inputFile));
             reader.setLineMapper(new DefaultLineMapper<Person>(){
                 {
                     setLineTokenizer(new DelimitedLineTokenizer(){
