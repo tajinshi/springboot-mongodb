@@ -41,13 +41,13 @@ public class SpringBatchConfig {
          * ItemReader定义,用来读取数据 注入外部的文件地址 @Value("#{jobParameters[filePath]}") String inputFile
          * 1，使用FlatFileItemReader读取文件
          * 2，使用FlatFileItemReader的setResource方法设置csv文件的路径
-         * 3，对此对cvs文件的数据和领域模型类做对应映射
+         * 3，使用注解@StepScope 返回类型得改为FlatFileItemReader，因为ItemReader没有doOpen方法，无法注入reader
          * @return
          * @throws Exception
          */
         @Bean
         @StepScope
-        public ItemReader<Person> reader(@Value("#{jobParameters[filePath]}") String inputFile)throws Exception {
+        public FlatFileItemReader<Person> reader(@Value("#{jobParameters[filePath]}") String inputFile)throws Exception {
             System.out.println("--------------------"+inputFile);
             FlatFileItemReader<Person> reader = new FlatFileItemReader<>();
 //            reader.setResource(new ClassPathResource("person.csv")); //指定文件地址
