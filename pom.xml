@@ -156,6 +156,17 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<!--比fastjson序列化效率更高，更好-->
+		<dependency>
+			<groupId>io.protostuff</groupId>
+			<artifactId>protostuff-core</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.protostuff</groupId>
+			<artifactId>protostuff-runtime</artifactId>
+			<version>1.6.0</version>
+		</dependency>
 		<!--shiro-->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
