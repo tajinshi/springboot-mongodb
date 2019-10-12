@@ -156,6 +156,14 @@
 			<artifactId>fastjson</artifactId>
 			<version>${fastjson.version}</version>
 		</dependency>
+		<!--导出工具类easyExcel比上面俩个效率更高-->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>easyexcel</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+
 		<!--比fastjson序列化效率更高，更好-->
 		<dependency>
 			<groupId>io.protostuff</groupId>
