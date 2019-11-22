@@ -66,6 +66,10 @@ spring:
     port: 5672
     username: guest
     password: guest
+  flyway:
+    locations: classpath:db/migrate
+    enabled: true
+    baseline-on-migrate: true
 
 
 
@@ -79,3 +83,5 @@ mybatis:
 #log日志 logback file与path配置一个即可，都配置以file为主
 #logging:
 #  path: ${user.dir}/logs/
+
+# flyway mysql version controller

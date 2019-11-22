@@ -1,0 +1,14 @@
+1.flyway配置
+spring:
+  flyway:
+    locations: classpath:db/migrate  -- 脚本存放路径
+    enabled: true                    -- 是否启用flyway
+    baseline-on-migrate: true
+
+
+2.flyway脚本命名规则
+     Vn_yyyyMMddhhmmss__描述信息.sql
+
+3.flyway功能描述
+   Flyway是独立于数据库的应用、管理并跟踪数据库变更的数据库版本管理工具。用通俗的话讲，
+   Flyway可以像Git管理不同人的代码那样，管理不同人的sql脚本，从而做到数据库同步。
