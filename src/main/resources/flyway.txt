@@ -12,3 +12,11 @@ spring:
 3.flyway功能描述
    Flyway是独立于数据库的应用、管理并跟踪数据库变更的数据库版本管理工具。用通俗的话讲，
    Flyway可以像Git管理不同人的代码那样，管理不同人的sql脚本，从而做到数据库同步。
+
+
+4. maven配置
+		<!--数据库版本升级工具flyway-->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
