@@ -66,6 +66,9 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+
+# flyway mysql version controller
   flyway:
     locations: classpath:db/migrate
     enabled: true
@@ -84,4 +87,3 @@ mybatis:
 #logging:
 #  path: ${user.dir}/logs/
 
-# flyway mysql version controller
