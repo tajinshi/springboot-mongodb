@@ -8,6 +8,8 @@ import com.google.zxing.common.BitMatrix;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,7 @@ import java.util.Map;
 @RequestMapping(value = "create")
 @Slf4j
 public class QrCodeController {
+    private static final Logger log = LoggerFactory.getLogger(QrCodeController.class);
     /**
      * 动态生成二维码流
      * @param response
